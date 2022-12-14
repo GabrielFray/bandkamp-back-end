@@ -20,5 +20,4 @@ urlpatterns = [
     path("admin/", admin.site.urls),
     path("api/", include("users.urls")),
     path("api/", include("albums.urls")),
-    # path("api/", include("songs.urls")),
 ]

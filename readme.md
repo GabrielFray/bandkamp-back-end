@@ -69,3 +69,10 @@ pytest --testdox -vvs tests/albums/
 ```python
 pytest --testdox -vvs tests/songs/
 ```
+# Diagrama (DER) do Projeto BandKamp
+
+<img src="./assets/bandkamp_der.png">
+
+
+
+## Link do Swagger API 

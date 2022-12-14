@@ -51,6 +51,7 @@ MY_APPS = [
     "users",
     "albums",
     "songs",
+    "drf_spectacular",
 ]
 
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + MY_APPS
@@ -92,13 +93,13 @@ WSGI_APPLICATION = "bandkamp.wsgi.application"
 
 DATABASES = {
     "default": {
-      "ENGINE": "django.db.backends.postgresql",
-      "NAME": os.getenv("DB_NAME"),
-      "USER": os.getenv("DB_USER"),
-      "PASSWORD": os.getenv("DB_PASSWORD"),
-      "HOST": "127.0.0.1",
-      "PORT": 5432,
-  }
+        "ENGINE": "django.db.backends.postgresql",
+        "NAME": os.getenv("DB_NAME"),
+        "USER": os.getenv("DB_USER"),
+        "PASSWORD": os.getenv("DB_PASSWORD"),
+        "HOST": "127.0.0.1",
+        "PORT": 5432,
+    }
 }
 
 
@@ -128,6 +129,15 @@ SIMPLE_JWT = {
 REST_FRAMEWORK = {
     "DEFAULT_PAGINATION_CLASS": "rest_framework.pagination.PageNumberPagination",
     "PAGE_SIZE": 2,
+    "DEFAULT_SCHEMA_CLASS": "drf_spectacular.openapi.AutoSchema",
+}
+
+SPECTACULAR_SETTINGS = {
+    "TITLE": "BandKamp API",
+    "DESCRIPTION": "BandKamp is an api for users to register and store their favorite albums with their favorite songs.",
+    "VERSION": "1.0.0",
+    "SERVE_INCLUDE_SCHEMA": False,
+    # OTHER SETTINGS
 }
 
 # Internationalization
